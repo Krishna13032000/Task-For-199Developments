@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.example.task.ModelForDatabase" />
+        <variable
+            name="clickHandler"
+            type="com.example.task.HomeScreenAdapter.ClickHandler" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:onClick="@{()->clickHandler.onCLick(model)}"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:src="@color/black"
+        android:id="@+id/idImageView"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TITLE"
+            title="@{model.title}"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DESCRIPTION"
+            description="@{model.description}"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</layout>
